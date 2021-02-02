@@ -6,7 +6,6 @@ function fetchSubreddits(sub) {
 
 async function checkImage(data) {
     let post = await data[0].data.children[0].data;
-    // console.log("NEW!!!!!!!!!!!!!!")
 
     // if statement below checks if the post is really an image
     if (!post || !data[0] || !data[0].data || post.is_video || post.media) {
@@ -19,11 +18,12 @@ async function checkImage(data) {
         post.url.toLowerCase().includes('imgur')
     ) { // checks url tyes
         fetchSubreddits(getSubreddit());
-    } else if (post.ups < 100) {
-        fetchSubreddits(getSubreddit())
+    } else if (post.ups < 100) { // threshold amount of upvotes
+        fetchSubreddits(getSubreddit());
     } else {
         appendPosts(post); // calls function which renders the image
-        console.log(post)
+        appendSource(post); // renders sources
+        console.log(post);
     }
 }
 
@@ -35,21 +35,18 @@ function appendPosts(post) {
     article.id = "image1";
     article.appendChild(img);
     cont.appendChild(article);
-
-    appendSource(post)
 }
 
 function appendSource(post) {
-    const prefix = 'https://www.reddit.com'
-    let cont = document.getElementById('sources')
-    let a = document.createElement('a')
-    let text = document.createTextNode('Post by:' + post.author)
+    const prefix = 'https://www.reddit.com';
+    let cont = document.getElementById('sources');
+    let a = document.createElement('a');
+    let text = document.createTextNode('Post by:' + post.author);
 
-    a.setAttribute('target', '_blank')
-    a.setAttribute('href', prefix + post.permalink)
-
-    a.appendChild(text)
-    cont.appendChild(a)
+    a.setAttribute('target', '_blank');
+    a.setAttribute('href', prefix + post.permalink);
+    a.appendChild(text);
+    cont.appendChild(a);
 }
 
 
@@ -65,21 +62,65 @@ function callFetch() {
             if (i < 9) { // counter will go to 10 and redo callFetch
                 loop();
             }
-        }, 500)
+        }, 500);
     }
-    loop() //activates the loop
+    loop(); //activates the loop
 }
-
-callFetch();
 
 function getSubreddit() {
-    const subReddits = [
-        'NatureIsFuckingLit',
-        'travel',
-        'EarthPorn',
-        'natureporn'
-    ];
+    let subReddits;
 
-    let random = subReddits[Math.floor(Math.random() * subReddits.length)];
+    if (category === 'nature') {
+
+        const subReddits = [
+            'NatureIsFuckingLit',
+            'travel',
+            'EarthPorn',
+            'natureporn'
+        ];
+
+        let random = subReddits[Math.floor(Math.random() * subReddits.length)];
+        return random;
+
+    } else if (category === 'cars') {
+
+        const subReddits = [
+            '420sx',
+            '4Runner',
+            'carporn',
+            'F1Porn',
+            'RallyPorn',
+            'MotoGPPorn',
+            'MotorsportPorn'
+        ];
+
+        let random = subReddits[Math.floor(Math.random() * subReddits.length)];
+        return random
+    }
     return random;
 }
+
+function refreshContent() {
+    let list = document.getElementById('list'); // containers that need to be refreshed
+    let sources = document.getElementById('sources');
+    list.innerHTML = ""; // removes html inside container
+    sources.innerHTML = "";
+    callFetch(); // calls another fetch for new data
+}
+
+let category = '';
+
+let radios = document.getElementsByName('subreddit')
+    .forEach(radio => {
+        if (radio.checked) {
+            category = radio.value;
+        }
+        radio.onclick = () => {
+            category = radio.value;
+            refreshContent();
+        }
+    })
+// console.log(category)
+
+
+callFetch(); //starts everything

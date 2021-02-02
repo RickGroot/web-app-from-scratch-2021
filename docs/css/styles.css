@@ -27,6 +27,7 @@ h1 {
 #list article:hover img {
   filter: contrast(190%);
   filter: brightness(110%);
+  filter: saturate(110%);
   transform: scale(1.05);
   transition-duration: 0.5s;
 }
