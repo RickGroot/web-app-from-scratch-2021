@@ -17,7 +17,7 @@ async function checkImage(data) {
         post.url.toLowerCase().includes('youtu') ||
         post.url.toLowerCase().includes('comments') ||
         post.url.toLowerCase().includes('imgur')
-        ) { // checks url tyes
+    ) { // checks url tyes
         fetchSubreddits(getSubreddit());
     } else if (post.ups < 100) {
         fetchSubreddits(getSubreddit())
@@ -37,18 +37,22 @@ function show(post) {
     cont.appendChild(article);
 }
 
-// Loop below fetches 10 images from reddit API, one per second
-var i = 0; //  set your counter to 0
 
 function callFetch() {
-    setTimeout(() => { //  call a 3s setTimeout when the loop is called
-        fetchSubreddits(getSubreddit());
+    // Loop below fetches 10 images from reddit API, one per second
+    var i = 0; //  set your counter to 0
 
-        i++; // increment the counter
-        if (i < 9) { // counter will go to 10 and redo callFetch
-            callFetch();
-        }
-    }, 1000)
+    function loop() {
+        setTimeout(() => { //  call a 3s setTimeout when the loop is called
+            fetchSubreddits(getSubreddit());
+
+            i++; // increment the counter
+            if (i < 9) { // counter will go to 10 and redo callFetch
+                loop();
+            }
+        }, 500)
+    }
+    loop() //activates the loop
 }
 
 callFetch();

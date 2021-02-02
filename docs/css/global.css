@@ -1,9 +1,11 @@
 :root {
-    --primary: rgb(71, 58, 255);
+    --primary: rgb(255, 255, 255);
     --secondary: rgb(46, 46, 46);
 }
 
 * {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 400;
     box-sizing:border-box;
     scroll-behavior: smooth;
 }

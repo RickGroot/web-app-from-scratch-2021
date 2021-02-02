@@ -44,7 +44,7 @@ All work during this course will be tested against our [Best Practices for JavaS
 
 <!-- Add a link to your live demo in Github Pages 🌐-->
 ## Live demo
-Not available just yet...
+https://rickgroot.github.io/web-app-from-scratch-2021/docs/ 
 
 <!-- ☝️ replace this description with a description of your own work -->
 ## This project
@@ -64,6 +64,10 @@ This is a project that uses the reddit API. This API gets data from reddit and p
 
 <!-- What external data source is featured in your project and what are its properties 🌠 -->
 ## Data
+A lot of data gets sent through the reddit API.
+
+### Drawbacks
+The reddit API is huge, and sends you lost of information about everything that has relation to the origional post. This means that every comment, and all userdata is sent via the API. Because of this it's difficult to get the correct data into the application. Another drawback is loading speed. The objects are big, and take some time to load, especially with multiple posts. Same goes for image sizes, feched images from these posts are big file sizes and take some time to load.
 
 <!-- Maybe a checklist of done stuff and stuff still on your wishlist? ✅ -->
 
