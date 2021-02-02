@@ -9,7 +9,7 @@ h1 {
   font-weight: 700;
 }
 
-section {
+#list {
   padding: 0;
   display: grid;
   grid-template-columns: repeat(3, auto);
@@ -17,21 +17,21 @@ section {
   grid-gap: 40px;
 }
 
-section article {
+#list article {
   min-height: 50vh;
   max-height: 70vh;
   box-shadow: 4px 4px 10px 0px rgb(0, 0, 0);
   overflow: hidden;
 }
 
-section article:hover img {
+#list article:hover img {
   filter: contrast(190%);
   filter: brightness(110%);
   transform: scale(1.05);
   transition-duration: 0.5s;
 }
 
-section article img {
+#list article img {
   object-fit: cover;
   height: 100%;
   width: 100%;

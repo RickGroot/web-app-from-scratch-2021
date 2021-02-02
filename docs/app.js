@@ -22,12 +22,12 @@ async function checkImage(data) {
     } else if (post.ups < 100) {
         fetchSubreddits(getSubreddit())
     } else {
-        show(post); // calls function which renders the image
+        appendPosts(post); // calls function which renders the image
         console.log(post)
     }
 }
 
-function show(post) {
+function appendPosts(post) {
     let cont = document.getElementById('list');
     let article = document.createElement('article');
     let img = document.createElement('img');
@@ -35,6 +35,21 @@ function show(post) {
     article.id = "image1";
     article.appendChild(img);
     cont.appendChild(article);
+
+    appendSource(post)
+}
+
+function appendSource(post) {
+    const prefix = 'https://www.reddit.com'
+    let cont = document.getElementById('sources')
+    let a = document.createElement('a')
+    let text = document.createTextNode('Post by:' + post.author)
+
+    a.setAttribute('target', '_blank')
+    a.setAttribute('href', prefix + post.permalink)
+
+    a.appendChild(text)
+    cont.appendChild(a)
 }
 
 
