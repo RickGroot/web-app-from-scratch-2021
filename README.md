@@ -43,8 +43,12 @@ Manipulate data. Reflect on end result
 All work during this course will be tested against our [Best Practices for JavaScript](https://github.com/cmda-minor-web/best-practices/blob/master/javascript.md).
 
 <!-- Add a link to your live demo in Github Pages 🌐-->
+## Live demo
+Not available just yet...
 
 <!-- ☝️ replace this description with a description of your own work -->
+## This project
+This is a project that uses the reddit API. This API gets data from reddit and puts it into my project.
 
 <!-- replace the code in the /docs folder with your own, so you can showcase your work with GitHub Pages 🌍 -->
 
@@ -53,11 +57,16 @@ All work during this course will be tested against our [Best Practices for JavaS
 <!-- Maybe a table of contents here? 📚 -->
 
 <!-- How about a section that describes how to install this project? 🤓 -->
+## Install this project
 
 <!-- ...but how does one use this project? What are its features 🤔 -->
+## Features
 
 <!-- What external data source is featured in your project and what are its properties 🌠 -->
+## Data
 
 <!-- Maybe a checklist of done stuff and stuff still on your wishlist? ✅ -->
 
 <!-- How about a license here? 📜 (or is it a licence?) 🤷 -->
+# Licence
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
