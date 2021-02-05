@@ -1,7 +1,10 @@
 function fetchSubreddits(sub) {
-    fetch('https://www.reddit.com/r/' + sub + '/random/.json')
+    fetch('https://www.reddit.com/r/' + sub + '/random/.json', {mode: 'cors'})
         .then(response => response.json())
-        .then(content => checkImage(content));
+        .then(content => checkImage(content))
+        .catch(function(error) {  
+            console.log('Request failed', error)  
+          });
 }
 
 async function checkImage(data) {
@@ -68,8 +71,6 @@ function callFetch() {
 }
 
 function getSubreddit() {
-    let subReddits;
-
     if (category === 'nature') {
 
         const subReddits = [
@@ -85,13 +86,10 @@ function getSubreddit() {
     } else if (category === 'cars') {
 
         const subReddits = [
-            '420sx',
             '4Runner',
             'carporn',
             'F1Porn',
             'RallyPorn',
-            'MotoGPPorn',
-            'MotorsportPorn'
         ];
 
         let random = subReddits[Math.floor(Math.random() * subReddits.length)];
