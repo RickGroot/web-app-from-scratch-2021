@@ -118,7 +118,6 @@ let radios = document.getElementsByName('subreddit')
             refreshContent();
         }
     })
-// console.log(category)
 
 
 callFetch(); //starts everything
