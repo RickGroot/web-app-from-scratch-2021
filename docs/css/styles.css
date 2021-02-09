@@ -9,6 +9,11 @@ h1 {
   font-weight: 700;
 }
 
+#post h1 {
+  opacity: .6;
+  position: fixed;
+}
+
 #list {
   padding: 0;
   display: grid;
@@ -49,3 +54,39 @@ a {
   font-weight: inherit;
   color: inherit;
 }
+
+#detail section img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  max-width: 100vw;
+  /* max-height: 100vh; */
+  object-fit: cover;
+  z-index: -1;
+}
+
+#data {
+  background-color: var(--secondary);
+  position: fixed;
+  bottom: -105px;
+  left: 0;
+  right: 0;
+  padding: 40px;
+  padding-top: 30px;
+  border-radius: 15px 15px 0 0;
+  transition: all 0.5s ease;
+}
+
+#data:hover {
+  bottom: 0px;
+}
+
+/* #data::before {
+  content: '>';
+  transform: rotate(90deg);
+  width: 10px;
+  margin: 0 auto;
+  left: calc(50% -5px);
+} */

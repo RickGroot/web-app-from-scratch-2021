@@ -11,17 +11,15 @@ function cleanPage() {
 }
 
 function appendImage(post) {
-    let cont = document.getElementById('data');
-    let img = document.createElement('img');
+    let img = document.getElementById('postimg');
     img.src = post.url; //sets src of image
-
-    cont.appendChild(img);
+    console.log(post)
 }
 
 function appendData(post) {
     let cont = document.getElementById('data');
     let p = document.createElement('p');
-    let text = document.createTextNode('Ups:' + post.ups);
+    let text = document.createTextNode('Likes: ' + post.ups);
 
     p.appendChild(text);
     cont.appendChild(p);
