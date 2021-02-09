@@ -26,7 +26,7 @@ export function callFetch() {
 function fetchSubreddits(sub) {
     fetch('https://www.reddit.com/r/' + sub + '/random/.json', {mode: 'cors'})
         .then(response => response.json())
-        .then(content => checkImage(content))
+        .then(content => checkImage(content)) // modulate & check image
         .catch(function(error) {  
             console.log('Request failed', error)  
           });
@@ -39,21 +39,22 @@ function checkImage(data) {
     // if statement below checks if the post is really an image
     if (!post || !data[0] || !data[0].data || post.is_video || post.media) {
         fetchSubreddits(getSubreddit()) // fetches another image if needed
-    } else if (
+    } else if ( // checks url tyes
         post.url.toLowerCase().includes('v.redd.it') ||
         post.url.toLowerCase().includes('gallery') ||
         post.url.toLowerCase().includes('youtu') ||
         post.url.toLowerCase().includes('comments') ||
         post.url.toLowerCase().includes('imgur')
-    ) { // checks url tyes
+    ) {
         fetchSubreddits(getSubreddit());
     } else if (post.ups < 100) { // threshold amount of upvotes
         fetchSubreddits(getSubreddit());
-    } else {
-        appendPosts(post); // calls function which renders the image
-        appendSource(post); // renders sources
+    } else { // renders image data
+        appendPosts(post);
+        appendSource(post);
         console.log(post);
     }
 }
 
 // ----------------------------------------------------------------------------------------- function calls
+callFetch()
