@@ -3,7 +3,7 @@ import {
 } from "./router.js";
 import {
     details
-} from "./details.js";
+} from "../detailpage.js";
 
 function appendPosts(post) {
     let cont = document.getElementById('list');
@@ -20,19 +20,6 @@ function appendPosts(post) {
     cont.appendChild(article);
 }
 
-function appendSource(post) {
-    const prefix = 'https://www.reddit.com';
-    let cont = document.getElementById('sources');
-    let a = document.createElement('a');
-    let text = document.createTextNode('Post by:' + post.author);
-
-    a.setAttribute('target', '_blank');
-    a.setAttribute('href', prefix + post.permalink);
-    a.appendChild(text);
-    cont.appendChild(a);
-}
-
 export {
-    appendPosts,
-    appendSource
+    appendPosts
 };

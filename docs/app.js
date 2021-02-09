@@ -3,11 +3,7 @@ import {
     getSubreddit
 } from "./modules/getReddit.js";
 import {
-    category
-} from "./modules/category.js";
-import {
-    appendPosts,
-    appendSource
+    appendPosts
 } from "./modules/append.js";
 import {
     saveJSON,
@@ -67,12 +63,11 @@ function checkImage(data) {
         fetchSubreddits(getSubreddit());
     } else { // renders image data
         appendPosts(post);
-        appendSource(post);
         saveJSON(post);
-        // console.log(post);
     }
 }
 
 // ----------------------------------------------------------------------------------------- function calls
 cleanJSON();
 callFetch();
+router();

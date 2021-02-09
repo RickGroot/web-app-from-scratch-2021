@@ -43,3 +43,9 @@ h1 {
   transform: scale(1);
   filter: inherit;
 }
+
+a {
+  font-size: inherit;
+  font-weight: inherit;
+  color: inherit;
+}
