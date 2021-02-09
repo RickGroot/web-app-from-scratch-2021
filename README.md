@@ -23,13 +23,14 @@ Coming soon...
 
 <!-- ...but how does one use this project? What are its features 🤔 -->
 ## Features
-| Actor Diagram           | Interaction Diagram           |
-|:-----------------------:|:-----------------------------:|
-| ![actor diagram][actor] | Interaction Diagram       |
+| Actor Diagram           | Interaction Diagram                 |
+|:-----------------------:|:-----------------------------------:|
+| ![actor diagram][actor] | ![interaction diagram][interaction] |
 
 Choose a picture category.
 
 [actor]: https://github.com/rickgroot/web-app-from-scratch-2021/blob/main/assets/ActorDiagram.png?raw=true "Actor Diagram"
+[interaction]: https://github.com/rickgroot/web-app-from-scratch-2021/blob/main/assets/InteractionDiagram.jpg?raw=true "Interaction Diagram"
 
 <!-- What external data source is featured in your project and what are its properties 🌠 -->
 ## Data

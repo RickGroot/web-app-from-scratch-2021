@@ -1,3 +1,10 @@
+import {
+    router
+} from "./router.js";
+import {
+    details
+} from "./details.js";
+
 function appendPosts(post) {
     let cont = document.getElementById('list');
     let article = document.createElement('article');
@@ -5,6 +12,11 @@ function appendPosts(post) {
     img.src = post.url; //sets src of image
     article.id = "image1";
     article.appendChild(img);
+    article.onclick = () => {
+        router('post/' + post.id); // defines route
+        location.href = "/#post/" + post.id; // changes your url
+        details(post); // renders details page
+    }
     cont.appendChild(article);
 }
 
@@ -20,4 +32,7 @@ function appendSource(post) {
     cont.appendChild(a);
 }
 
-export { appendPosts, appendSource };
+export {
+    appendPosts,
+    appendSource
+};

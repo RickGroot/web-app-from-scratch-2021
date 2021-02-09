@@ -1,8 +1,22 @@
 // ----------------------------------------------------------------------------------------- imports
-// import 'regenerator-runtime/runtime';
-import { getSubreddit } from "./modules/getReddit.js";
-import { category } from "./modules/category.js";
-import { appendPosts, appendSource } from "./modules/append.js"
+import {
+    getSubreddit
+} from "./modules/getReddit.js";
+import {
+    category
+} from "./modules/category.js";
+import {
+    appendPosts,
+    appendSource
+} from "./modules/append.js";
+import {
+    saveJSON,
+    cleanJSON,
+    data
+} from "./modules/saveJSON.js";
+import {
+    router
+} from "./modules/router.js";
 
 // ----------------------------------------------------------------------------------------- start function chain
 export function callFetch() {
@@ -24,12 +38,14 @@ export function callFetch() {
 
 // ----------------------------------------------------------------------------------------- fetches images
 function fetchSubreddits(sub) {
-    fetch('https://www.reddit.com/r/' + sub + '/random/.json', {mode: 'cors'})
+    fetch('https://www.reddit.com/r/' + sub + '/random/.json', {
+            mode: 'cors'
+        })
         .then(response => response.json())
         .then(content => checkImage(content)) // modulate & check image
-        .catch(function(error) {  
-            console.log('Request failed', error)  
-          });
+        .catch(function (error) {
+            console.log('Request failed', error)
+        });
 }
 
 // ----------------------------------------------------------------------------------------- modulate & check data
@@ -52,9 +68,11 @@ function checkImage(data) {
     } else { // renders image data
         appendPosts(post);
         appendSource(post);
-        console.log(post);
+        saveJSON(post);
+        // console.log(post);
     }
 }
 
 // ----------------------------------------------------------------------------------------- function calls
-callFetch()
+cleanJSON();
+callFetch();

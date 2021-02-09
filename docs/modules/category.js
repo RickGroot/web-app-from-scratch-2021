@@ -1,4 +1,9 @@
-import { callFetch } from "../app.js"; // when category changes
+import {
+    callFetch
+} from "../app.js"; // when category changes
+import {
+    cleanJSON
+} from "./saveJSON.js";
 
 // gets the category specified by the radio button
 export let category = '';
@@ -19,5 +24,6 @@ function refreshContent() {
     let sources = document.getElementById('sources');
     list.innerHTML = ""; // removes html inside container
     sources.innerHTML = "";
+    cleanJSON(); //resets JSON
     callFetch(); // calls another fetch for new data
 }
