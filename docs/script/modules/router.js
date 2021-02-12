@@ -1,5 +1,6 @@
 export function router() {
 
+    // defines routes and says what to do at specific route
     routie({
         '': () => {
             document.getElementById('home').classList.remove("invis");

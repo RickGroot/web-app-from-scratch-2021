@@ -4,8 +4,10 @@ import { category } from "./category.js"
 export function getSubreddit() {
     let random;
 
+    //if statements check selected category
     if (category === 'nature') {
 
+        //select subreddits for this category
         const subReddits = [
             'NatureIsFuckingLit',
             'travel',
@@ -13,6 +15,7 @@ export function getSubreddit() {
             'natureporn'
         ];
 
+        //select a random subreddit from list above
         let random = subReddits[Math.floor(Math.random() * subReddits.length)];
         return random;
 
@@ -27,6 +30,7 @@ export function getSubreddit() {
 
         let random = subReddits[Math.floor(Math.random() * subReddits.length)];
         return random;
+
     } else if (category === 'art') {
 
         const subReddits = [
@@ -42,6 +46,7 @@ export function getSubreddit() {
 
         let random = subReddits[Math.floor(Math.random() * subReddits.length)];
         return random;
+
     } else if (category === 'food') {
 
         const subReddits = [
@@ -53,6 +58,7 @@ export function getSubreddit() {
 
         let random = subReddits[Math.floor(Math.random() * subReddits.length)];
         return random;
+
     } else if (category === 'animal') {
 
         const subReddits = [
@@ -66,7 +72,8 @@ export function getSubreddit() {
 
         let random = subReddits[Math.floor(Math.random() * subReddits.length)];
         return random;
+
     }
-    console.log(random)
+
     return random;
 }

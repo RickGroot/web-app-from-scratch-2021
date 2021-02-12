@@ -1,10 +1,11 @@
 let data = [];
 
+//saves data into JSON object
 function saveJSON(obj) {
     data.push(obj);
-    // console.log(data)
 }
 
+//cleans JSON on page reload
 function cleanJSON() {
     data = [];
 }
