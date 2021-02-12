@@ -3,7 +3,7 @@
 
 <!-- Add a link to your live demo in Github Pages 🌐-->
 ## Live demo
-https://rickgroot.github.io/web-app-from-scratch-2021/docs/ 
+https://pintreddit.netlify.app/ 
 
 <!-- ☝️ replace this description with a description of your own work -->
 ## This project
