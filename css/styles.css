@@ -9,11 +9,19 @@ h1 {
   font-weight: 700;
 }
 
+form {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: baseline;
+}
+
 form label input[type="radio"] {
   display: none;
 }
 
-form label {
+form label,
+form button {
   display: inline-block;
   background-color: rgb(189, 189, 189);
   padding: 4px 11px;
@@ -21,6 +29,18 @@ form label {
   font-size: 16px;
   color: black;
   cursor: pointer;
+}
+
+form button {
+  margin: 0;
+}
+
+form input[type="range"] {
+  margin-left: auto;
+}
+
+form p {
+  margin: 0 20px;
 }
 
 #post h1 {
@@ -36,6 +56,14 @@ form label {
   grid-gap: 40px;
 }
 
+.load {
+  background: url(../img/loading.png), rgb(88, 88, 88);
+  background-size: 40%, cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 50vh;
+}
+
 #list article {
   position: relative;
   display: inline-block;
@@ -43,6 +71,10 @@ form label {
   max-height: 70vh;
   box-shadow: 4px 4px 10px 0px rgb(0, 0, 0);
   overflow: hidden;
+  background: url(../img/loading.png), rgb(88, 88, 88);
+  background-size: 40%, cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 #list article:hover img {

@@ -9,15 +9,18 @@ import {
     saveJSON,
     cleanJSON,
     data
-} from "./modules/saveJSON.js";
+} from "./modules/data.js";
 import {
     router
 } from "./modules/router.js";
+import {
+    value
+} from "./modules/interaction.js";
 
 // ----------------------------------------------------------------------------------------- start function chain
 export function callFetch() {
     // Loop below fetches 10 images from reddit API, one per second
-    var i = 0; //  set your counter to 0
+    let i = 0; //  set your counter to 0
 
     function loop() {
         setTimeout(() => { //  call a 3s setTimeout when the loop is called
@@ -25,6 +28,7 @@ export function callFetch() {
 
             i++; // increment the counter
             if (i < 9) { // counter will go to 10 and redo callFetch
+                console.log(i)
                 loop();
             }
         }, 500);
@@ -56,10 +60,13 @@ function checkImage(data) {
         post.url.toLowerCase().includes('gallery') ||
         post.url.toLowerCase().includes('youtu') ||
         post.url.toLowerCase().includes('comments') ||
+        post.url.toLowerCase().includes('insta') ||
+        post.url.toLowerCase().includes('preview') ||
+        post.url.toLowerCase().includes('www') ||
         post.url.toLowerCase().includes('imgur')
     ) {
         fetchSubreddits(getSubreddit());
-    } else if (post.ups < 100) { // threshold amount of upvotes
+    } else if (post.ups < value) { // threshold amount of upvotes
         fetchSubreddits(getSubreddit());
     } else { // renders image data
         appendPosts(post);

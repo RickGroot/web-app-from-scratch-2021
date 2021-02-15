@@ -1,4 +1,4 @@
-import { category } from "./category.js"
+import { category } from "./interaction.js"
 
 // gets the right subreddit
 export function getSubreddit() {
