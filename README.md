@@ -87,7 +87,7 @@ A lot of data gets sent through the reddit API. In this application subreddits g
     "permalink": "/r/NatureIsFuckingLit/comments/ljfawo/black_rain_frog/",
     "pinned": false,
     "post_hint": "image",
-    "preview": {images: Array(1), enabled: true},
+    "preview": {"images": [], "enabled": true},
     "pwls": 6,
     "subreddit": "NatureIsFuckingLit",
     "subreddit_id": "t5_3gdh7",
