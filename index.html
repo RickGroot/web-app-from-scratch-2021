@@ -26,7 +26,7 @@
   <main id="home">
     <form name="category">
       <label>
-        <input type="radio" name="subreddit" value="nature" checked="checked">
+        <input type="radio" name="subreddit" value="nature">
         Nature
       </label>
       <label>
@@ -45,6 +45,9 @@
         <input type="radio" name="subreddit" value="animal">
         Animals
       </label>
+      <input type="range" min="5" max="500" value="100" id="upvotes">
+      <p id="content"></p>
+      <button id="apply">Apply filter</button>
     </form>
 
     <section id="list">

@@ -6,7 +6,11 @@ import {
 } from "./data.js";
 
 // ------------------------------------------------------------------------------ gets the category specified by the radio button
-export let category = '';
+let category = localStorage.getItem('category'); // sets category to localstorage
+
+if (!category) { // returns a standard category
+    category = 'nature';
+}
 
 document.getElementsByName('subreddit')
     .forEach(radio => {
@@ -15,6 +19,7 @@ document.getElementsByName('subreddit')
         }
         radio.onclick = () => {
             category = radio.value;
+            localStorage.setItem('category', category); // saves it in localstorage
             refreshContent();
         }
     })
@@ -24,8 +29,38 @@ function refreshContent() {
     let sources = document.getElementById('sources');
     list.innerHTML = ""; // removes html inside container
     sources.innerHTML = "";
+    list.classList.add("load"); // placeholder load image
+
     cleanJSON(); //resets JSON
     callFetch(); // calls another fetch for new data
 }
 
 // ------------------------------------------------------------------------------ gets the slider value for likes
+const slider = document.getElementById("upvotes");
+const content = document.getElementById("content");
+let value = localStorage.getItem('slider'); // value of slider from localstorage
+
+if (!value) { // sets default value
+    slider.value = 100;
+} else { // puts value to text
+    slider.value = value
+    content.innerHTML = "min " + value + " upvotes";
+}
+
+// when slider changes
+slider.oninput = () => {
+    value = slider.value;
+    content.innerHTML = "min " + value + " upvotes";
+    return value;
+}
+
+//apply effects on button press
+const btn = document.getElementById("apply");
+btn.onclick = () => {
+    refreshContent();
+    localStorage.setItem('slider', value);
+    return false;
+}
+
+// ------------------------------------------------------------------------------ exports
+export { category, value };
