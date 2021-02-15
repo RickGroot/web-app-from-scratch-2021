@@ -9,7 +9,7 @@ import {
     saveJSON,
     cleanJSON,
     data
-} from "./modules/saveJSON.js";
+} from "./modules/data.js";
 import {
     router
 } from "./modules/router.js";

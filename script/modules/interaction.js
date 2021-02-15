@@ -3,9 +3,9 @@ import {
 } from "../app.js"; // when category changes
 import {
     cleanJSON
-} from "./saveJSON.js";
+} from "./data.js";
 
-// gets the category specified by the radio button
+// ------------------------------------------------------------------------------ gets the category specified by the radio button
 export let category = '';
 
 document.getElementsByName('subreddit')
@@ -27,3 +27,5 @@ function refreshContent() {
     cleanJSON(); //resets JSON
     callFetch(); // calls another fetch for new data
 }
+
+// ------------------------------------------------------------------------------ gets the slider value for likes
