@@ -30,7 +30,7 @@ Coming soon...
 Choose a picture category.
 
 [actor]: https://github.com/rickgroot/web-app-from-scratch-2021/blob/main/assets/ActorDiagram.png?raw=true "Actor Diagram"
-[interaction]: https://github.com/rickgroot/web-app-from-scratch-2021/blob/main/assets/InteractionDiagram.png?raw=true "Interaction Diagram"
+[interaction]: https://github.com/rickgroot/web-app-from-scratch-2021/blob/main/assets/InteractionDiagram.jpg?raw=true "Interaction Diagram"
 
 <!-- What external data source is featured in your project and what are its properties 🌠 -->
 ## Data
