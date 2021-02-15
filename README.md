@@ -67,45 +67,45 @@ A lot of data gets sent through the reddit API. In this application subreddits g
 ### JSON example
 ```json
 {
-    hide_score: false
-    id: "ljfawo"
-    link_flair_css_class: null
-    link_flair_richtext: []
-    link_flair_text: null
-    link_flair_text_color: "dark"
-    link_flair_type: "text"
-    locked: false
-    media: null
-    media_embed: {}
-    mod_reports: []
-    name: "t3_ljfawo"
-    no_follow: false
-    num_comments: 23
-    num_reports: null
-    over_18: false
-    parent_whitelist_status: "all_ads"
-    permalink: "/r/NatureIsFuckingLit/comments/ljfawo/black_rain_frog/"
-    pinned: false
-    post_hint: "image"
-    preview: {images: Array(1), enabled: true}
-    pwls: 6
-    subreddit: "NatureIsFuckingLit"
-    subreddit_id: "t5_3gdh7"
-    subreddit_name_prefixed: "r/NatureIsFuckingLit"
-    subreddit_subscribers: 4580511
-    subreddit_type: "public"
-    suggested_sort: "confidence"
-    thumbnail: "https://b.thumbs.redditmedia.com/JL9HCmUeXYEKTiT3_XGdaBFUOubPNRMP_74jRwHnMXo.jpg"
-    thumbnail_height: 105
-    thumbnail_width: 140
-    title: "🔥 Black Rain Frog 🔥"
-    top_awarded_type: null
-    total_awards_received: 0
-    treatment_tags: []
-    ups: 314
-    upvote_ratio: 0.99
-    url: "https://i.redd.it/rolasx7rtch61.jpg"
-    url_overridden_by_dest: "https://i.redd.it/rolasx7rtch61.jpg"
+    hide_score: false,
+    id: "ljfawo",
+    link_flair_css_class: null,
+    link_flair_richtext: [],
+    link_flair_text: null,
+    link_flair_text_color: "dark",
+    link_flair_type: "text",
+    locked: false,
+    media: null,
+    media_embed: {},
+    mod_reports: [],
+    name: "t3_ljfawo",
+    no_follow: false,
+    num_comments: 23,
+    num_reports: null,
+    over_18: false,
+    parent_whitelist_status: "all_ads",
+    permalink: "/r/NatureIsFuckingLit/comments/ljfawo/black_rain_frog/",
+    pinned: false,
+    post_hint: "image",
+    preview: {images: Array(1), enabled: true},
+    pwls: 6,
+    subreddit: "NatureIsFuckingLit",
+    subreddit_id: "t5_3gdh7",
+    subreddit_name_prefixed: "r/NatureIsFuckingLit",
+    subreddit_subscribers: 4580511,
+    subreddit_type: "public",
+    suggested_sort: "confidence",
+    thumbnail: "https://b.thumbs.redditmedia.com/JL9HCmUeXYEKTiT3_XGdaBFUOubPNRMP_74jRwHnMXo.jpg",
+    thumbnail_height: 105,
+    thumbnail_width: 140,
+    title: "🔥 Black Rain Frog 🔥",
+    top_awarded_type: null,
+    total_awards_received: 0,
+    treatment_tags: [],
+    ups: 314,
+    upvote_ratio: 0.99,
+    url: "https://i.redd.it/rolasx7rtch61.jpg",
+    url_overridden_by_dest: "https://i.redd.it/rolasx7rtch61.jpg",
 }
 ```
 
