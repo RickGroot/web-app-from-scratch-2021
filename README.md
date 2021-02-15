@@ -65,6 +65,14 @@ This project uses the reddit API, and data from reddit and puts it into your bro
 A lot of data gets sent through the reddit API. In this application subreddits get defined and called. Reddit sends back a random post from the requested subreddit. Data gets modified and modulated, only correct data gets rendered to the page. Data gets checked via it's url type and amount of likes.
 
 ### JSON example
+Data below is some data of an image. This is just a small bit of all image data that gets passed to the application trough the reddit API.    
+
+This is an example of my data path:
+```js
+let post = data[0].data.children[0].data;
+```
+    
+And this is some of the JSON data from 'post':
 ```json
 {
     "hide_score": false,
