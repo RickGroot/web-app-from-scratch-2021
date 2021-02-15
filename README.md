@@ -18,14 +18,13 @@ This project uses the reddit API, and data from reddit and puts it into your bro
 
 <!-- How about a section that describes how to install this project? 🤓 -->
 ## Install this project
-### Clone the repository
-
+    
+Clone the repository
 ```bash
   $ git clone https://github.com/RickGroot/web-app-from-scratch-2021.git
 ```
-
-### Navigate to repository and install packages
-
+    
+Navigate to repository and install packages
 ```bash
   $ cd web-app-from-scratch-2021
 ```
@@ -33,15 +32,13 @@ This project uses the reddit API, and data from reddit and puts it into your bro
 ```bash
   $ npm install
 ```
-
-### Start local dev environment
-
+    
+Start local dev environment
 ```bash
   $ npm run dev
 ```
-
-### Build export
-
+    
+Build export
 ```bash
   $ npm run build
 ```
@@ -117,7 +114,7 @@ And this is some of the JSON data from 'post':
 }
 ```
 
-### Drawbacks
+### API Drawbacks
 The reddit API is huge, and sends you lost of information about everything that has relation to the origional post. This means that every comment, and all userdata is sent via the API. Because of this it's difficult to get the correct data into the application. Another drawback is loading speed. The objects are big, and take some time to load, especially with multiple posts. Same goes for image sizes, feched images from these posts are big file sizes and take some time to load.
 
 <!-- Maybe a checklist of done stuff and stuff still on your wishlist? ✅ -->
