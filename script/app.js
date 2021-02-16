@@ -8,7 +8,8 @@ import {
 import {
     saveJSON,
     cleanJSON,
-    data
+    data,
+    id
 } from "./modules/data.js";
 import {
     router
@@ -28,7 +29,6 @@ export function callFetch() {
 
             i++; // increment the counter
             if (i < 9) { // counter will go to 10 and redo callFetch
-                console.log(i)
                 loop();
             }
         }, 500);
@@ -42,10 +42,23 @@ function fetchSubreddits(sub) {
             mode: 'cors'
         })
         .then(response => response.json())
-        .then(content => checkImage(content)) // modulate & check image
+        .then(content => checkDuplicate(id, content)) // modulate & check image
         .catch(function (error) {
             console.log('Request failed', error)
         });
+}
+
+// ----------------------------------------------------------------------------------------- checks for duplicates
+function checkDuplicate(arr, data) {
+    let post = data[0].data.children[0].data;
+
+    if (!arr) { // if there is no compare data
+        checkImage(data);
+    } else if (arr.includes(post.id)) { // fetch new image when duplicate
+        fetchSubreddits(getSubreddit()); 
+    } else { // no duplicate
+        checkImage(data); 
+    }
 }
 
 // ----------------------------------------------------------------------------------------- modulate & check data
@@ -54,7 +67,7 @@ function checkImage(data) {
 
     // if statement below checks if the post is really an image
     if (!post || !data[0] || !data[0].data || post.is_video || post.media) {
-        fetchSubreddits(getSubreddit()) // fetches another image if needed
+        fetchSubreddits(getSubreddit()); // fetches another image if needed
     } else if ( // checks url tyes
         post.url.toLowerCase().includes('v.redd.it') ||
         post.url.toLowerCase().includes('gallery') ||
