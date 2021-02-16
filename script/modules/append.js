@@ -33,5 +33,6 @@ function appendPosts(post) {
 }
 
 export {
-    appendPosts
+    appendPosts,
+    cont
 };

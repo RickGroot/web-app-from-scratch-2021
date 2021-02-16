@@ -2,7 +2,10 @@
 export function details(post) {
     cleanPage();
     appendImage(post);
+    appendTitle(post);
+    appendSub(post)
     appendUps(post);
+    appendRatio(post)
     appendSource(post);
 }
 
@@ -19,11 +22,41 @@ function appendImage(post) {
     console.log(post)
 }
 
+// appends title
+function appendTitle(post) {
+    let cont = document.getElementById('data');
+    let header = document.createElement('h2');
+    let text = document.createTextNode(post.title);
+
+    header.appendChild(text);
+    cont.appendChild(header);
+}
+
+// appends subreddit
+function appendSub(post) {
+    let cont = document.getElementById('data');
+    let p = document.createElement('p');
+    let text = document.createTextNode('From sub: ' + post.subreddit_name_prefixed);
+
+    p.appendChild(text);
+    cont.appendChild(p);
+}
+
 // appends amout of upvotes
 function appendUps(post) {
     let cont = document.getElementById('data');
     let p = document.createElement('p');
     let text = document.createTextNode('Likes: ' + post.ups);
+
+    p.appendChild(text);
+    cont.appendChild(p);
+}
+
+// appends upvote ratio
+function appendRatio(post) {
+    let cont = document.getElementById('data');
+    let p = document.createElement('p');
+    let text = document.createTextNode('Up/downvote ratio: ' + post.upvote_ratio);
 
     p.appendChild(text);
     cont.appendChild(p);
