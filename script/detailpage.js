@@ -67,7 +67,7 @@ function appendSource(post) {
     const prefix = 'https://www.reddit.com';
     let cont = document.getElementById('data');
     let a = document.createElement('a');
-    let text = document.createTextNode('Post author: ' + post.author);
+    let text = document.createTextNode('-> Post by ' + post.author);
 
     a.setAttribute('target', '_blank');
     a.setAttribute('href', prefix + post.permalink);
