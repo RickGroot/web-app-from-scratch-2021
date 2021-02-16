@@ -3,7 +3,8 @@ import {
     getSubreddit
 } from "./modules/getReddit.js";
 import {
-    appendPosts
+    appendPosts,
+    cont
 } from "./modules/append.js";
 import {
     saveJSON,
@@ -42,7 +43,14 @@ function fetchSubreddits(sub) {
             mode: 'cors'
         })
         .then(response => response.json())
-        .then(content => checkDuplicate(id, content)) // modulate & check image
+        .then(content => {
+            // prevents too many items
+            if (cont.children.length < 9) {
+                checkDuplicate(id, content);
+            } else {
+                return;
+            }
+        }) // modulate & check image
         .catch(function (error) {
             console.log('Request failed', error)
         });
@@ -55,9 +63,9 @@ function checkDuplicate(arr, data) {
     if (!arr) { // if there is no compare data
         checkImage(data);
     } else if (arr.includes(post.id)) { // fetch new image when duplicate
-        fetchSubreddits(getSubreddit()); 
+        fetchSubreddits(getSubreddit());
     } else { // no duplicate
-        checkImage(data); 
+        checkImage(data);
     }
 }
 
