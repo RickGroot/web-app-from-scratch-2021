@@ -19,7 +19,6 @@ function cleanPage() {
 function appendImage(post) {
     let img = document.getElementById('postimg');
     img.src = post.url; //sets src of image
-    console.log(post)
 }
 
 // appends title
