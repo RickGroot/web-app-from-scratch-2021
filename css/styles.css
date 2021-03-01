@@ -1,5 +1,5 @@
 body {
-  background-color: var(--secondary);
+  background-image: linear-gradient(-225deg, #2CD8D5 0%, #C5C1FF 56%, #FFBAC3 100%);
   color: white;
   padding: 0 10vw;
 }
@@ -7,6 +7,7 @@ body {
 h1 {
   font-size: 3em;
   font-weight: 700;
+  text-shadow: 2px 2px 1px #000000;
 }
 
 form {
@@ -24,11 +25,13 @@ form label input[type="radio"] {
 form label,
 form button {
   display: inline-block;
-  background-color: rgb(189, 189, 189);
+  background-color: rgb(255, 255, 255);
+  box-shadow: 2px 2px 3px 0px #000000;
   padding: 4px 11px;
   margin: 10px 20px 40px 0;
   font-size: 16px;
   color: black;
+  border: none;
   cursor: pointer;
 }
 
@@ -41,6 +44,7 @@ form input[type="range"] {
 }
 
 form p {
+  text-shadow: 1px 1px 1px #000000;
   margin: 0 20px;
 }
 
@@ -155,6 +159,7 @@ a {
   display: grid;
   grid-template-columns: 70% 30%;
   grid-template-rows: 90vh;
+  grid-column-gap: 10px;
 }
 
 #detail section img {
@@ -168,12 +173,15 @@ a {
 }
 
 #data {
-  background-color: var(--secondary);
+  background-color: white;
+  color: var(--secondary);
+  box-shadow: 2px 2px 3px 0px #000000;
   bottom: -105px;
   padding: 40px;
   padding-top: 30px;
-  border-radius: 15px 15px 0 0;
+  border-radius: 15px;
   transition: all 0.5s ease;
+  height: fit-content;
 }
 
 #data:hover {

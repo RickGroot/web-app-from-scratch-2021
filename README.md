@@ -1,75 +1,78 @@
 # Web App Fromm Scratch
 **@cmda-minor-web** 2020 - 2021
 
-<!-- Add a link to your live demo in Github Pages 🌐-->
 ## Live demo
 https://pintreddit.netlify.app/ 
 
-<!-- ☝️ replace this description with a description of your own work -->
 ## This project
 Pintreddit is a simple web application for inspiration. 
 This project uses the reddit API, and data from reddit and puts it into your browser. With a few categories to choose from inspiration is guaranteed! 
 
-<!-- Add a nice poster image here at the end of the week, showing off your shiny frontend 📸 -->
-## Shiney pictures
-![Week 1](https://github.com/rickgroot/web-app-from-scratch-2021/blob/main/assets/week1poster.jpg?raw=true)
+## The application
+![Poster](https://github.com/rickgroot/web-app-from-scratch-2021/blob/main/assets/poster.jpg?raw=true)
 
-<!-- Maybe a table of contents here? 📚 -->
+## Table of contents
+* [Install project](https://github.com/RickGroot/web-app-from-scratch-2021/tree/main#install-this-project)
+* [Features](https://github.com/RickGroot/web-app-from-scratch-2021/tree/main#features)
+* [Diagrams](https://github.com/RickGroot/web-app-from-scratch-2021/tree/main#diagrams)
+* [Data](https://github.com/RickGroot/web-app-from-scratch-2021/tree/main#data)
+* [Future goals](https://github.com/RickGroot/web-app-from-scratch-2021/tree/main#somewhere-in-the-future)
+* [Rubric](https://github.com/RickGroot/web-app-from-scratch-2021/tree/main#rubric)
 
-<!-- How about a section that describes how to install this project? 🤓 -->
 ## Install this project
     
-Clone the repository
+Clone the repository.
 ```bash
   $ git clone https://github.com/RickGroot/web-app-from-scratch-2021.git
 ```
     
-Navigate to repository and install packages
+Navigate to repository...
 ```bash
   $ cd web-app-from-scratch-2021
 ```
 
+...and then install packages.
 ```bash
   $ npm install
 ```
     
-Start local dev environment
+Start local dev environment.
 ```bash
   $ npm run dev
 ```
     
-Build export
+Build export.
 ```bash
   $ npm run build
 ```
 
-<!-- ...but how does one use this project? What are its features 🤔 -->
 ## Features
 * Get inspired by the power of reddit
 * Choose your own category
+* Choose a minimum amount of likes
 * Look at likes and other cool information about the image
 
+## Diagrams
 | Actor Diagram           | Interaction Diagram                 |
 |:-----------------------:|:-----------------------------------:|
 | ![actor diagram][actor] | ![interaction diagram][interaction] |
 
 
 [actor]: https://github.com/rickgroot/web-app-from-scratch-2021/blob/main/assets/ActorDiagram.png?raw=true "Actor Diagram"
-[interaction]: https://github.com/rickgroot/web-app-from-scratch-2021/blob/main/assets/InteractionDiagram.jpg?raw=true "Interaction Diagram"
+[interaction]: https://github.com/rickgroot/web-app-from-scratch-2021/blob/main/assets/InteractionDiagram.png?raw=true "Interaction Diagram"
 
-<!-- What external data source is featured in your project and what are its properties 🌠 -->
 ## Data
-A lot of data gets sent through the reddit API. In this application subreddits get defined and called. Reddit sends back a random post from the requested subreddit. Data gets modified and modulated, only correct data gets rendered to the page. Data gets checked via it's url type and amount of likes.
+A lot of data gets sent through the reddit API. In this application subreddits get defined and called. Reddit sends back a random post from the requested subreddit. Data gets modified and modulated, only correct data gets rendered to the page. Data gets checked via it's url type and amount of likes. Once the data is fetched and checked, it will append to the HTML page, where you can be inspired by a random picture gallery.
 
 ### JSON example
-Data below is some data of an image. This is just a small bit of all image data that gets passed to the application trough the reddit API.    
+Data below is some data of an image. This is just a small section of all image data that gets passed to the application trough the reddit API.    
 
-This is an example of my data path:
+This is some data manipulation to get to the correct data:
 ```js
 let post = data[0].data.children[0].data;
 ```
     
-And this is some of the JSON data from 'post':
+And this is a section of the JSON data from 'post':
 ```json
 {
     "hide_score": false,
@@ -117,10 +120,12 @@ And this is some of the JSON data from 'post':
 ### API Drawbacks
 The reddit API is huge, and sends you lost of information about everything that has relation to the origional post. This means that every comment, and all userdata is sent via the API. Because of this it's difficult to get the correct data into the application. Another drawback is loading speed. The objects are big, and take some time to load, especially with multiple posts. Same goes for image sizes, feched images from these posts are big file sizes and take some time to load.
 
-<!-- Maybe a checklist of done stuff and stuff still on your wishlist? ✅ -->
+## Somewhere in the future
+- [ ] Add images to favorites
+- [ ] More filter options
+- [ ] Improve routing
 
-<!-- How about a license here? 📜 (or is it a licence?) 🤷 -->
-### Rubric
+## Rubric
 [Rubric](https://docs.google.com/spreadsheets/d/1vJJ4EhIqkefWj1nWFp0Pnvy1Kld-S2V3qwZgC6XQO0c/edit?usp=sharing)
 
 # Licence
