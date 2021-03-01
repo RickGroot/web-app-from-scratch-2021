@@ -48,7 +48,9 @@ if (!value) { // sets default value
 }
 
 // when slider changes
-slider.oninput = () => {
+slider.addEventListener('input', changeValue);
+
+function changeValue() {
     value = slider.value;
     content.innerHTML = "min " + value + " upvotes";
     return value;
@@ -56,11 +58,22 @@ slider.oninput = () => {
 
 //apply effects on button press
 const btn = document.getElementById("apply");
-btn.onclick = () => {
+btn.addEventListener('click', (event) => {
     refreshContent();
     localStorage.setItem('slider', value);
+    event.preventDefault();
     return false;
-}
+});
+
+// function apply(event) {
+//     refreshContent();
+//     localStorage.setItem('slider', value);
+//     event.preventDefault();
+//     return false;
+// }
 
 // ------------------------------------------------------------------------------ exports
-export { category, value };
+export {
+    category,
+    value
+};
