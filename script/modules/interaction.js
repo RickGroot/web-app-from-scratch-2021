@@ -65,13 +65,6 @@ btn.addEventListener('click', (event) => {
     return false;
 });
 
-// function apply(event) {
-//     refreshContent();
-//     localStorage.setItem('slider', value);
-//     event.preventDefault();
-//     return false;
-// }
-
 // ------------------------------------------------------------------------------ exports
 export {
     category,
