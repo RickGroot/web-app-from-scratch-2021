@@ -1,5 +1,11 @@
 // function that calls all appends
 export function details(post) {
+
+    if (!post) {
+        location.href = "/#undefined"; // changes your url
+        return;
+    }
+
     cleanPage();
     appendImage(post);
     appendTitle(post);
